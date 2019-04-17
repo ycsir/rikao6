@@ -1,0 +1,75 @@
+@charset"utf-8";
+	$font-size:37.5px;
+	@function rem($rem) {
+			@return $rem/$font-size*1rem;
+	}
+	*{
+		margin:0;
+		padding:0;
+		list-style:none;
+		text-decoration:none;
+		box-sizing:border-box;
+		font-size: rem(14px);
+	}
+	body{
+		-webkit-user-select:none;
+		-webkit-touch-callout:none;
+	}
+	button,textarea,select,input{
+		appearance:none;
+	}
+
+	a{
+		-webkit-tap-highlight-color:rgb(0,0,0);
+		//var param=JSON.parse('{"'+location.search
+		//.slice(1).replace(/&/g,'","')
+		//.replace(/=/g,'":"')+'"}')
+	}
+
+	@mixin num($w,$h){
+		width:$w;
+		height:$h;
+	}
+	$bg:background;
+	html,body{
+		@include num(100%,100%);
+  }
+  
+  .wrap{
+		@include num(100%,100%);
+    display:flex;
+    flex-direction: column;
+  }
+  header{
+		@include num(100%,rem(50px));
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 rem(15px);
+    text-align: center;
+    span{
+      @include num(100%,auto);
+      display:inline-block;
+    }
+  }
+  section{
+    flex:1;
+    overflow: auto;
+  }
+
+  .box1{
+		@include num(100%,rem(300px));
+    background:red;
+  }
+  .box2{
+		@include num(100%,rem(100px));
+    background:skyblue;
+  }
+  .box3{
+		@include num(100%,rem(100px));
+    background:yellowgreen;
+  }
+  .box4{
+		@include num(100%,rem(100px));
+    background:purple;
+  }
